@@ -69,8 +69,8 @@ const findEmployeeByFirstName = (srcArray, firstName) => {
   return srcArray.find(employeeObject => employeeObject.firstName === firstName);
 };
 
-let calculatePayroll = function(arrayOfEmployeeRecords){
-    return arrayOfEmployeeRecords.reduce(function(memo, rec){
-        return memo + allWagesFor(rec)
-    }, 0)
-}
+const calculatePayroll = (srcArray) => {
+  return srcArray.reduce((sum, employeeObject) => {
+    return sum + allWagesFor(employeeObject);
+  }, 0);
+};
