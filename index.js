@@ -51,4 +51,13 @@ const hoursWorkedOnDate = (employeeObject, date) => {
   const timeOut = employeeObject.timeOutEvents.find(record => record.date === date);
   
   return (timeOut.hour - timeIn.hour) / 100;
-}
+};
+
+const wagesEarnedOnDate = (employeeObject, date) => {
+  const hoursWorked = hoursWorkedOnDate(employeeObject, date);
+  const employeePay = employeeObject.payPerHour;
+  
+  return hoursWorked * employeePay;
+};
+
+
