@@ -65,3 +65,6 @@ const allWagesFor = (employeeObject) => {
   return datesWorked.reduce( (t, date) => wagesEarnedOnDate(employeeObject, t) + wagesEarnedOnDate(employeeObject, date));
 };
 
+const findEmployeeByFirstName = (srcArray, firstName) => {
+  return srcArray.find(employeeObject => employeeObject.firstName === firstName);
+};
