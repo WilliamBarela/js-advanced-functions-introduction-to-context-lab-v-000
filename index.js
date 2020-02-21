@@ -61,6 +61,6 @@ const wagesEarnedOnDate = (employeeObject, date) => {
 };
 
 const allWagesFor = (employeeObject) => {
-  const datesWorked = employeeObject.timeInEvents.filter(clockIn => clockIn.date);
+  const datesWorked = employeeObject.timeInEvents.map(clockIn => clockIn.date);
   return datesWorked.reduce((total, date) => total + wagesEarnedOnDate(employeeObject, date));
 }
